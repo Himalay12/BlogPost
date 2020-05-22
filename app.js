@@ -84,9 +84,11 @@ app.post("/compose", (req, res) => {
     res.redirect("/");
 })
 
+let port = process.env.PORT;
+
+if(port == "" || port == null) port = 8844;
 
 
-
-app.listen(8844, function() {
-  console.log("Server started on port 8844");
+app.listen(port, function() {
+  console.log(`Server started on port ${port}`);
 });
